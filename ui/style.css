@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.left-panel {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.settings-icon {
+  font-size: 22px;
+}
+
+.sticks-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.stick-section {
+  text-align: center;
+  min-width: 160px;
+}
+
+canvas {
+  border: 1px solid #000;
+  background: #fff;
+}
+
+.axis-values {
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.axis-values span {
+  min-width: 50px;
+  text-align: center;
+  display: inline-block;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  padding: 6px 12px;
+  background: #eee;
+  border: 1px solid #aaa;
+  text-align: center;
+}
+
+.button.pressed {
+  background: #4caf50;
+  color: white;
+}
+
+.right-panel {
+  width: 280px;
+  background: #fff;
+  border-left: 2px solid #ccc;
+  padding: 24px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 16px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.right-panel h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.right-panel p {
+  margin: 0 0 10px;
+  font-weight: bold;
+}
+
+.right-panel span {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+
+#speed,
+#pos-x,
+#pos-y,
+#pos-z,
+#facing {
+  font-family: monospace;
+  font-weight: normal;
+  display: inline-block;
+}
+
+/* MAP CSS */
+.tab-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+}
+
+.tab-buttons button {
+  padding: 5px 12px;
+  font-weight: bold;
+  border: 1px solid #444;
+  background: #f4f4f4;
+  cursor: pointer;
+}
+
+.tab-buttons button.active {
+  background: #2196f3;
+  color: white;
+}
+
+#tab-map, #tab-viewer {
+  display: none;
+}
+
+#tab-map.active,
+#tab-viewer.active {
+  display: flex;
+}
+
+#tab-map {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  width: 100%;
+  height: 100vh;
+}
+
+#mapCanvas {
+  border: 2px solid #333;
+  background: black;
+  transform: scale(0.8);
+  transform-origin: center;
+  width: fit-content;
+  margin: auto;
+}
