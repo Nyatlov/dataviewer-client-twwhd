@@ -18,7 +18,18 @@ This Python-based application connects to a Wii U running the [Data Viewer Serve
 
 ## 🚀 Getting Started
 
-1. Launch the Wii U with the **Data Viewer Server** plugin enabled.
+### Option 1: Portable Executable (Recommended)
+
+No Python required. Download and run the `.exe` from the [Releases](https://github.com/Nyatlov/dataviewer-server-twwhd/releases) page.
+
+1. Launch the Wii U with the **Data Viewer Server** plugin enabled
+2. Open the executable
+3. Enter your Wii U’s IP address
+4. Watch inputs and data stream in real-time
+
+### Option 2: Run with Python (Dev Mode)
+
+1. Install Python 3.9.13
 2. On your PC, run the client:
 
     ```bash
@@ -32,7 +43,7 @@ This Python-based application connects to a Wii U running the [Data Viewer Serve
 
 ## 🛠 Requirements
 
-- Python 3.8+
+- Python 3.9
 - `pywebview`
 - Uses standard libraries: `socket`, `json`, `threading`, etc.
 
