@@ -1,75 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wii U Input Viewer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="tab-buttons">
     <button onclick="switchTab('viewer')" id="btn-viewer" class="active">🕹 Input</button>
     <button onclick="switchTab('map')" id="btn-map">🗺 Map</button>
   </div>
-  
-    <div class="main-container active" id="tab-viewer">
-        <div class="left-panel">
-          <div class="header">
-            <h1>Wii U Input Viewer</h1>
-            <span class="settings-icon"></span>
-          </div>
-    
-          <div class="sticks-container">
-            <div class="stick-section">
-              <p>Main Stick</p>
-              <canvas id="stickL" width="120" height="120"></canvas>
-              <div class="axis-values">
-                <span id="lx">LX: 128</span> | <span id="ly">LY: 128</span>
-              </div>
-            </div>
-            <div class="stick-section">
-              <p>C-Stick</p>
-              <canvas id="stickR" width="120" height="120"></canvas>
-              <div class="axis-values">
-                <span id="rx">RX: 128</span> | <span id="ry">RY: 128</span>
-              </div>
-            </div>
-          </div>
-    
-          <div class="buttons-grid" id="buttons">
+
+  <div class="main-container active" id="tab-viewer">
+    <div class="left-panel">
+      <div class="header">
+        <h1>Wii U Input Viewer</h1>
+        <span class="settings-icon"></span>
+      </div>
+
+      <div class="sticks-container">
+        <div class="stick-section">
+          <p>Main Stick</p>
+          <canvas id="stickL" width="120" height="120"></canvas>
+          <div class="axis-values">
+            <span id="lx">LX: 128</span> | <span id="ly">LY: 128</span>
           </div>
         </div>
-    
-        <div class="right-panel">
-          <h2>Link Info</h2>
-          <p><strong>Speed:</strong> <span id="speed">0.00</span></p>
-          <p><strong>Position:</strong><br>
-            <span id="pos-x">x=0.00</span>,<br>
-            <span id="pos-y">y=0.00</span>,<br>
-            <span id="pos-z">z=0.00</span>
-          </p>
-          <p><strong>Facing:</strong> <span id="facing">0</span></p>
+        <div class="stick-section">
+          <p>C-Stick</p>
+          <canvas id="stickR" width="120" height="120"></canvas>
+          <div class="axis-values">
+            <span id="rx">RX: 128</span> | <span id="ry">RY: 128</span>
+          </div>
         </div>
       </div>
+
+      <div class="buttons-grid" id="buttons">
+      </div>
     </div>
-    
+
+    <div class="right-panel">
+      <h2>Link Info</h2>
+      <p><strong>Speed:</strong> <span id="speed">0.00</span></p>
+      <p><strong>Position:</strong><br>
+        <span id="pos-x">x=0.00</span>,<br>
+        <span id="pos-y">y=0.00</span>,<br>
+        <span id="pos-z">z=0.00</span>
+      </p>
+      <p><strong>Facing:</strong> <span id="facing">0</span></p>
+
+      <hr style="margin: 16px 0;">
+
+      <h2>Current Stage</h2>
+      <p><strong>Stage:</strong> <span id="stage">--</span></p>
+      <p><strong>Spawn:</strong> <span id="spawn">--</span></p>
+      <p><strong>Room:</strong> <span id="room">--</span></p>
+      <p><strong>Layer:</strong> <span id="layer">--</span></p>
+    </div>
+
+  </div>
+  </div>
+
   <div id="tab-map">
     <h2>World Map Viewer</h2>
     <div id="mapWrapper">
+      <div id="mapMessage" class="map-msg"></div>
       <canvas id="mapCanvas" width="590" height="590"></canvas>
     </div>
-  </div>  
+  </div>
 
   <script src="script.js"></script>
 </body>
-<div id="ip-modal" style="position:fixed; inset:0; background:#0008; display:flex; align-items:center; justify-content:center; z-index:1000;">
+<div id="ip-modal"
+  style="position:fixed; inset:0; background:#0008; display:flex; align-items:center; justify-content:center; z-index:1000;">
   <div style="background:#fff; padding:20px; border-radius:10px; font-family:sans-serif;">
     <p>Enter Wii U IP:</p>
     <input id="ip-input" type="text" value="192.168.1.13" style="width:200px; padding:5px;">
     <p style="margin-top:10px;">Port:</p>
     <input id="port-input" type="text" value="56709" style="width:200px; padding:5px;">
     <br><br>
-    <button onclick="window.pywebview.api.connect(document.getElementById('ip-input').value, document.getElementById('port-input').value)">Connect</button>
+    <button
+      onclick="window.pywebview.api.connect(document.getElementById('ip-input').value, document.getElementById('port-input').value)">Connect</button>
   </div>
 </div>
+
 </html>
