@@ -37,7 +37,7 @@ class WiiUInputBackend:
                     self.sock.sendall(b"ping")
             except Exception:
                 break
-            time.sleep(1 / 60)
+            time.sleep(1 / 30)
 
     def listen_wiiu(self):
         try:
