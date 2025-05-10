@@ -3,6 +3,8 @@ import json
 import threading
 import time
 import webview
+import os
+import sys
 
 class Api:
     def __init__(self, backend_class):
@@ -14,6 +16,8 @@ class Api:
         self.backend.start()
 
         webview.windows[0].evaluate_js("document.getElementById('ip-modal').style.display = 'none';")
+
+
 
 class WiiUInputBackend:
     def __init__(self, ip, port):
@@ -81,16 +85,22 @@ class WiiUInputBackend:
             except:
                 pass
 
+def resource_path(relative_path):
+    # Compatible PyInstaller
+    base_path = getattr(sys, '_MEIPASS', os.path.abspath("."))
+    return os.path.join(base_path, relative_path)
+html_path = resource_path("ui/index.html")
+
 if __name__ == "__main__":
     api = Api(WiiUInputBackend)
     webview.create_window(
     "Wii U Input Viewer",
-    "ui/index.html",
+    html_path,
     js_api=api,
     width=800,
     height=600,
-    resizable=False,   # 🔒 empêche le redimensionnement
-    fullscreen=False   # 🔒 empêche le plein écran au lancement
+    resizable=False,
+    fullscreen=False
 )
 
     webview.start()
