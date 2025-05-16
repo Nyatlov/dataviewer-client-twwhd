@@ -44,15 +44,18 @@
 
     <div class="right-panel">
       <h2>Link Info</h2>
-      <p><strong>Speed:</strong> <span id="speed">0.00</span></p>
+      <p><strong>Potential Speed:</strong> <span id="speed">0.00</span></p>
+      <p><strong>Actual Speed:</strong> <span id="potential-speed">0.00</span></p>
       <p><strong>Position:</strong><br>
         <span id="pos-x">x=0.00</span>,<br>
         <span id="pos-y">y=0.00</span>,<br>
         <span id="pos-z">z=0.00</span>
       </p>
       <p><strong>Facing:</strong> <span id="facing">0</span></p>
+      <p><strong>Speed Angle:</strong> <span id="speed-angle">0</span></p>
 
-      <hr style="margin: 16px 0;">
+
+      <hr style="margin: 6px 0;">
 
       <h2>Current Stage</h2>
       <p><strong>Stage:</strong> <span id="stage">--</span></p>
@@ -80,7 +83,7 @@
     <p>Enter Wii U IP:</p>
     <input id="ip-input" type="text" value="192.168.1.13" style="width:200px; padding:5px;">
     <p style="margin-top:10px;">Port:</p>
-    <input id="port-input" type="text" value="56709" style="width:200px; padding:5px;">
+    <input id="port-input" type="text" value="56710" style="width:200px; padding:5px;">
     <br><br>
     <button
       onclick="window.pywebview.api.connect(document.getElementById('ip-input').value, document.getElementById('port-input').value)">Connect</button>

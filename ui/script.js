@@ -107,10 +107,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if ("facing" in data) {
       document.getElementById("facing").textContent = data.facing;
     }
-    
+    if ("potentialSpeed" in data)
+      document.getElementById("potential-speed").textContent = data.potentialSpeed.toFixed(2);
+
+    if ("speedAngle" in data)
+      document.getElementById("speed-angle").textContent = data.speedAngle;
+
     if ("stage" in data) {
-    document.getElementById("stage").textContent = data.stage;
-    lastStage = data.stage;
+      document.getElementById("stage").textContent = data.stage;
+      lastStage = data.stage;
     }
     if ("spawn" in data) document.getElementById("spawn").textContent = data.spawn;
     if ("room" in data) document.getElementById("room").textContent = data.room;

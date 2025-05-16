@@ -87,7 +87,7 @@ canvas {
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   font-size: 16px;
   font-family: "Segoe UI", sans-serif;
 }
@@ -109,7 +109,9 @@ canvas {
 
 
 #speed,
+#potential-speed,
 #pos-x,
+#speed-angle,
 #pos-y,
 #pos-z,
 #facing {
