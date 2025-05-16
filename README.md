@@ -3,6 +3,8 @@
 > **Cross-platform real-time viewer for Wii U controller and player data.**
 
 This Python-based application connects to a Wii U running the [Data Viewer Server](https://github.com/Nyatlov/dataviewer-server-twwhd) plugin and displays controller input, Link's movement, and current map position in an interactive interface.
+![image](https://github.com/user-attachments/assets/5ced81d9-386a-49cb-85dd-61d0f2d52b2a)
+![image](https://github.com/user-attachments/assets/e0bab66b-5ec9-4eea-8598-8d14349c5b9f)
 
 ---
 
